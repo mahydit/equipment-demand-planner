@@ -23,7 +23,7 @@ class PortableEqipmentType
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Serializer\Groups({ "equipment_list", "type_list" })
+     * @Serializer\Groups({ "equipment_list", "type_list", "order_list" })
      */
     private $type;
 

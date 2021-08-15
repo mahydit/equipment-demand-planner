@@ -17,20 +17,20 @@ class PortableEqipment
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Serializer\Groups({ "equipment_list", "type_list" })
+     * @Serializer\Groups({ "equipment_list", "type_list", "order_list" })
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Serializer\Groups({ "equipment_list", "type_list" })
+     * @Serializer\Groups({ "equipment_list", "type_list", "order_list" })
      */
     private $description;
 
     /**
      * @ORM\ManyToOne(targetEntity=PortableEqipmentType::class, inversedBy="portableEqipments")
      * @ORM\JoinColumn(nullable=false)
-     * @Serializer\Groups({ "equipment_list" })
+     * @Serializer\Groups({ "equipment_list", "order_list" })
      */
     private $type;
 

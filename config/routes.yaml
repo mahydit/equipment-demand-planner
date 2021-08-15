@@ -13,3 +13,7 @@ potable_eqipment:
 potable_eqipment_type:
   prefix: /api/v1/
   resource: "routes/api/v1/potable_eqipment_types.yaml"
+
+rental_order:
+  prefix: /api/v1/
+  resource: "routes/api/v1/rental_orders.yaml"

@@ -1,0 +1,6 @@
+api_get_rental_orders:
+  path: order
+  controller: App\Controller\Api\V1\RentalOrderController::index
+  methods: ["GET"]
+  options:
+    expose: true

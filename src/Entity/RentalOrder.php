@@ -6,6 +6,7 @@ use App\Repository\RentalOrderRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Serializer;
 
 /**
  * @ORM\Entity(repositoryClass=RentalOrderRepository::class)
@@ -16,36 +17,43 @@ class RentalOrder
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Serializer\Groups({ "order_list" })
      */
     private $id;
 
     /**
      * @ORM\ManyToOne(targetEntity=Station::class, inversedBy="rentalOrdersStartStations")
+     * @Serializer\Groups({ "order_list" })
      */
     private $startStation;
 
     /**
      * @ORM\ManyToOne(targetEntity=Station::class, inversedBy="rentalOrdersEndStations")
+     * @Serializer\Groups({ "order_list" })
      */
     private $endStation;
 
     /**
      * @ORM\ManyToOne(targetEntity=Campervan::class, inversedBy="rentalOrders")
+     * @Serializer\Groups({ "order_list" })
      */
     private $campervan;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Serializer\Groups({ "order_list" })
      */
     private $startDate;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Serializer\Groups({ "order_list" })
      */
     private $endDate;
 
     /**
      * @ORM\ManyToMany(targetEntity=PortableEqipment::class, inversedBy="rentalOrders")
+     * @Serializer\Groups({ "order_list" })
      */
     private $equipments;
 
@@ -116,7 +124,7 @@ class RentalOrder
     {
         $this->endDate = $endDate;
 
-        return $this;
+        return $this; 
     }
 
     /**
