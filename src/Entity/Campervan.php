@@ -6,6 +6,7 @@ use App\Repository\CampervanRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Serializer;
 
 /**
  * @ORM\Entity(repositoryClass=CampervanRepository::class)
@@ -16,26 +17,31 @@ class Campervan
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Serializer\Groups({ "campervan_list" })
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Serializer\Groups({ "campervan_list" })
      */
     private $carNumber;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Serializer\Groups({ "campervan_list" })
      */
     private $brand;
 
     /**
      * @ORM\Column(type="boolean")
+     * @Serializer\Groups({ "campervan_list" })
      */
     private $isOnTheRoad;
 
     /**
      * @ORM\ManyToOne(targetEntity=Station::class, inversedBy="campervans")
+     * @Serializer\Groups({ "campervan_list" })
      */
     private $atStation;
 

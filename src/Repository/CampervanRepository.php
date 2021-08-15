@@ -47,4 +47,9 @@ class CampervanRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findAllQuery()
+    {
+        return $this->createQueryBuilder('c');
+    }
 }

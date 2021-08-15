@@ -1,0 +1,6 @@
+api_get_campervans:
+  path: campervan
+  controller: App\Controller\Api\V1\CampervanController::index
+  methods: ["GET"]
+  options:
+    expose: true
