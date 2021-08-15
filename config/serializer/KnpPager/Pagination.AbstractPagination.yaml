@@ -1,0 +1,35 @@
+Knp\Component\Pager\Pagination\AbstractPagination:
+  exclusion_policy: ALL
+  properties:
+    items:
+      expose: true
+      groups: [ api_response ]
+      access_type: public_method
+      accessor:
+        getter: getItems
+      type: array
+      serialized_name: items
+    totalCount:
+      expose: true
+      groups: [ api_response ]
+      serialized_name: totalItems
+    currentPageNumber:
+      expose: true
+      groups: [ api_response ]
+      serialized_name: current_page_number
+    numItemsPerPage:
+      expose: true
+      groups: [ api_response ]
+      serialized_name: page_limit
+    last:
+      expose: true
+      groups: [ api_response ]
+      serialized_name: last_page_number
+    first:
+      expose: true
+      groups: [ api_response ]
+      serialized_name: first_page_number
+    currant:
+      expose: true
+      groups: [ api_response ]
+      serialized_name: current_page_number
