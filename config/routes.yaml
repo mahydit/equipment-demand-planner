@@ -9,3 +9,7 @@ campervan:
 potable_eqipment:
   prefix: /api/v1/
   resource: "routes/api/v1/potable_eqipments.yaml"
+
+potable_eqipment_type:
+  prefix: /api/v1/
+  resource: "routes/api/v1/potable_eqipment_types.yaml"

@@ -47,4 +47,9 @@ class RentalOrderRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findAllQuery()
+    {
+        return $this->createQueryBuilder('o');
+    }
 }

@@ -47,4 +47,9 @@ class StationRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findAllQuery()
+    {
+        return $this->createQueryBuilder('s');
+    }
 }

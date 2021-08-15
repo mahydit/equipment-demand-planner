@@ -17,17 +17,19 @@ class PortableEqipmentType
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Serializer\Groups({ "type_list" })
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Serializer\Groups({ "equipment_list" })
+     * @Serializer\Groups({ "equipment_list", "type_list" })
      */
     private $type;
 
     /**
      * @ORM\OneToMany(targetEntity=PortableEqipment::class, mappedBy="type")
+     * @Serializer\Groups({ "type_list" })
      */
     private $portableEqipments;
 

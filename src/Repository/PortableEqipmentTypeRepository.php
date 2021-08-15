@@ -47,4 +47,9 @@ class PortableEqipmentTypeRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findAllQuery()
+    {
+        return $this->createQueryBuilder('et');
+    }
 }
