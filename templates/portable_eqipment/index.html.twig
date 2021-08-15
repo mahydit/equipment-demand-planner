@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PortableEqipment index{% endblock %}
+
+{% block main %}
+    <div class="row m-4">
+        <h1>Portable Equipments index</h1>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Is Used</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for portable_eqipment in portable_eqipments %}
+            <tr>
+                <td>{{ portable_eqipment.id }}</td>
+                <td>{{ portable_eqipment.description }}</td>
+                <td>{{ portable_eqipment.isUsed ? 'Yes' : 'No' }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
