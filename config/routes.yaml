@@ -4,7 +4,7 @@
 
 campervan:
   prefix: /api/v1/
-  resource: "routes/api/v1/campervan.yaml"
+  resource: "routes/api/v1/campervans.yaml"
 
 potable_eqipment:
   prefix: /api/v1/
