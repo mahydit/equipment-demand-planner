@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Campervan{% endblock %}
+
+{% block main %}
+    <div>
+        <div class="row m-4">
+            <h1>Campervan</h1>
+        </div>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ campervan.id }}</td>
+            </tr>
+            <tr>
+                <th>Car Number</th>
+                <td>{{ campervan.carNumber }}</td>
+            </tr>
+            <tr>
+                <th>Brand</th>
+                <td>{{ campervan.brand }}</td>
+            </tr>
+            <tr>
+                <th>Is On The Road</th>
+                <td>{{ campervan.isOnTheRoad ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    </div>
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section actions">
+        <div class="section m-3">
+            <a href="{{ path('campervan_index') }}" class="btn btn-lg btn-block btn-primary">
+                <i class="fa fa-edit" aria-hidden="true"></i> Back to list
+            </a>
+        </div>
+
+        <div class="section m-3">
+            <a href="{{ path('campervan_edit', {id: campervan.id}) }}" class="btn btn-lg btn-block btn-success">
+                <i class="fa fa-edit" aria-hidden="true"></i> Edit
+            </a>
+        </div>
+
+        <div class="section m-3">
+            {{ include('campervan/_delete_form.html.twig') }}
+        </div>
+    </div>
+    {{ parent() }}
+
+{% endblock %}
+
+

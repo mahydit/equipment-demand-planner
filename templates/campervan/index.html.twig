@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Campervan index{% endblock %}
+
+{% block main %}
+    <div class="row m-4">
+        <h1>Campervan index</h1>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Car Number</th>
+                <th>Brand</th>
+                <th>Is On The Road</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for campervan in campervans %}
+            <tr>
+                <td>{{ campervan.id }}</td>
+                <td>{{ campervan.carNumber }}</td>
+                <td>{{ campervan.brand }}</td>
+                <td>{{ campervan.isOnTheRoad ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('campervan_show', {'id': campervan.id}) }}">show</a>
+                    <a href="{{ path('campervan_edit', {'id': campervan.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section actions">
+        <div class="section m-3">
+            <a href="{{ path('campervan_new') }}" class="btn btn-lg btn-block btn-success">
+                <i class="fa fa-plus" aria-hidden="true"></i> Create new
+            </a>
+        </div>
+    </div>
+
+    {{ parent() }}
+
+{% endblock %}

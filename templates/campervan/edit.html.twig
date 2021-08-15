@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Campervan{% endblock %}
+
+{% block main %}
+    <div class="row m-4">
+        <h1>Edit Campervan</h1>
+    </div>
+
+    {{ include('campervan/_form.html.twig', {'button_label': 'Update'}) }}
+
+
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section actions">
+        <div class="section m-3">
+            <a href="{{ path('campervan_index') }}" class="btn btn-lg btn-block btn-primary">
+                <i class="fa fa-edit" aria-hidden="true"></i> Back to list
+            </a>
+        </div>
+
+        <div class="section m-3">
+            {{ include('campervan/_delete_form.html.twig') }}
+        </div>
+    </div>
+    {{ parent() }}
+
+{% endblock %}

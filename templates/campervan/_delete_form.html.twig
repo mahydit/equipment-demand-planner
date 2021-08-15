@@ -1,0 +1,7 @@
+<form action="{{ url('campervan_delete', {id:campervan.id}) }}" method="post" onsubmit="return confirm('Are you sure you want to delete this item?');" id="delete-form">
+    <input type="hidden" name="token" value="{{ csrf_token('delete' ~ campervan.id) }}" />
+    <button type="submit" class="btn btn-lg btn-block btn-danger">
+        <i class="fa fa-trash" aria-hidden="true"></i>
+        Delete
+    </button>
+</form>

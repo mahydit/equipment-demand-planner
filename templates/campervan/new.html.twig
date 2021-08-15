@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Campervan{% endblock %}
+
+{% block main %}
+    <div class="row m-4">
+        <h1>Create new Campervan</h1>
+    </div>
+
+    {{ include('campervan/_form.html.twig') }}
+
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section actions">
+        <div class="section m-3">
+            <a href="{{ path('campervan_index') }}" class="btn btn-lg btn-block btn-primary">
+                <i class="fa fa-edit" aria-hidden="true"></i> Back to list
+            </a>
+        </div>
+    </div>
+    {{ parent() }}
+
+{% endblock %}
