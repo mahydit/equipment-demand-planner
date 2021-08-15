@@ -17,13 +17,13 @@ class Station
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Serializer\Groups({ "campervan_list" })
+     * @Serializer\Groups({ "campervan_list", "equipment_list" })
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Serializer\Groups({ "campervan_list" })
+     * @Serializer\Groups({ "campervan_list", "equipment_list" })
      */
     private $name;
 

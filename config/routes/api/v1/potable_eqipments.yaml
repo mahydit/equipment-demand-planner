@@ -1,0 +1,6 @@
+api_get_equipments:
+  path: portable-equipment
+  controller: App\Controller\Api\V1\PortableEqipmentController::index
+  methods: ["GET"]
+  options:
+    expose: true

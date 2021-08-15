@@ -6,6 +6,7 @@ use App\Repository\PortableEqipmentRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Serializer;
 
 /**
  * @ORM\Entity(repositoryClass=PortableEqipmentRepository::class)
@@ -16,27 +17,32 @@ class PortableEqipment
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Serializer\Groups({ "equipment_list" })
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Serializer\Groups({ "equipment_list" })
      */
     private $description;
 
     /**
      * @ORM\ManyToOne(targetEntity=PortableEqipmentType::class, inversedBy="portableEqipments")
      * @ORM\JoinColumn(nullable=false)
+     * @Serializer\Groups({ "equipment_list" })
      */
     private $type;
 
     /**
      * @ORM\ManyToOne(targetEntity=Station::class, inversedBy="portableEqipments")
+     * @Serializer\Groups({ "equipment_list" })
      */
     private $atStation;
 
     /**
      * @ORM\Column(type="boolean")
+     * @Serializer\Groups({ "equipment_list" })
      */
     private $isUsed;
 
