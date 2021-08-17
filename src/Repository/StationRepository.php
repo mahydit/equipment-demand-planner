@@ -52,4 +52,23 @@ class StationRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('s');
     }
+
+    public function findAvailableEquipments()
+    {
+        return $this->createQueryBuilder('s')
+            ->select('s.name AS station, count(e.id) AS count , et.type AS type')
+            ->join('s.portableEqipments', 'e')
+            ->join('e.type', 'et')
+            ->where('e.atStation is NOT NULL')
+            ->groupBy('s.id')
+            ->addGroupBy('et.id')
+            ->getQuery()->getResult();
+    }
+
+    public function findAllStationNames()
+    {
+        return $this->createQueryBuilder('s')
+            ->select('s.name')
+            ->getQuery()->getArrayResult();
+    }
 }

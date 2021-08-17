@@ -52,4 +52,11 @@ class PortableEqipmentTypeRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('et');
     }
+
+    public function findAllTypes()
+    {
+        return $this->createQueryBuilder('et')
+            ->select('et.type')
+            ->getQuery()->getArrayResult();
+    }
 }
