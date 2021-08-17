@@ -39,6 +39,11 @@ function listStationsEquipmentsRentalOrderDetails($equipments)
 
 function listAvailableEquipmentsPerStation($equipments)
 {
+    if( $equipments.length === 0 ) {
+        $('#equipment_details').append('<hr>').append('<h3> No equipments available ! :( </h3>');
+        return false;
+    }
+
     $('#equipment_details').append('<hr>')
         .append('<h3> Equipments Available</h3>')
         .append('<ul>');

@@ -53,6 +53,7 @@ class RentalOrderHelper
                 if(isset($availableNow[$station.'-'.$type])) $count[$station.'-'.$type] +=  $availableNow[$station.'-'.$type];
                 if(isset($leaving[$station.'-'.$type])) $count[$station.'-'.$type] -=  $leaving[$station.'-'.$type];
                 if(isset($returned[$station.'-'.$type])) $count[$station.'-'.$type] +=  $returned[$station.'-'.$type];
+                if($count[$station.'-'.$type] == 0 ) unset($count[$station.'-'.$type]);
             }
         }
         return $count;
