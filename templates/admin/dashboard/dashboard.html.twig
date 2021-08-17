@@ -1,0 +1,23 @@
+{% extends 'admin/layout.html.twig' %}
+{% block content_title 'Rental Orders details' %}
+
+{% block main %}
+    <input type="text" id="datepicker"  autocomplete="off" placeholder="Select date" />
+    <div id="equipment_details" class="m-2 p-2"></div>
+{% endblock %}
+
+{% block body_javascript %}
+    {{ parent() }}
+    <script src="{{ asset('assets/js/admin/dashboard/rental_order.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            $("#datepicker").datepicker({
+                dateFormat: "yy-mm-dd",
+                onSelect: function (date) {
+                    showStationsDetails(date);
+                }
+            });
+        });
+    </script>
+{% endblock body_javascript %}
+
